@@ -1,5 +1,5 @@
 import {Text, View, StyleSheet, TextInput} from "react-native";
-import CalcButton from "./test6";
+import CalcButton from "./Test6";
 import {useState} from "react";
 
 
@@ -30,52 +30,52 @@ export default function Calculator(){
         setRes(undefined)
     }
 
-    const addNum2 = (value:string)=>{
-        if(!selectedOperation) {
-            setNum2((prevNum)=>{
-                if(value==="." && !prevNum.includes(".")){
-                    return prevNum+".";
-                }else{
-                    return prevNum+value;
-                }
-            });
-        }
-        setRes(undefined)
-    }
+    // const addNum2 = (value:string)=>{
+    //     if(!selectedOperation) {
+    //         setNum2((prevNum)=>{
+    //             if(value==="." && !prevNum.includes(".")){
+    //                 return prevNum+".";
+    //             }else{
+    //                 return prevNum+value;
+    //             }
+    //         });
+    //     }
+    //     setRes(undefined)
+    // }
 
-        const add = (s: string)=>{
+        const add = ()=>{
         setRes(parseFloat(num1)+parseFloat(num2))
         setSelectedOperation("+")
     }
 
-    const subtract = (s: string)=>{
+    const subtract = ()=>{
         setRes(parseFloat(num1)-parseFloat(num2))
         setSelectedOperation("-")
     }
 
-    const multiply = (s: string)=>{
+    const multiply = ()=>{
         setRes(parseFloat(num1)*parseFloat(num2))
         setSelectedOperation("*")
     }
 
-    const divide = (s: string)=>{
+    const divide = ()=>{
         setRes(parseFloat(num1)/parseFloat(num2))
         setSelectedOperation("/")
     }
 
-    const clear = (value:string)=>{
+    const clear = ()=>{
         setNum1(" ")
         setNum2(" ")
         setRes(undefined)
         setSelectedOperation(undefined)
     }
 
-    const deleteInt = (del: string)=>{
+    const deleteInt = ()=>{
         setNum2(" ")
         setRes(undefined)
     }
 
-    const equal = (s: string)=>{
+    const equal = ()=>{
         switch (selectedOperation){
             case "+":
                 setRes(parseFloat(num1)+parseFloat(num2));
@@ -94,14 +94,14 @@ export default function Calculator(){
         }
     }
 
-    const log = (ln: string) => {
+    const log = () => {
         if (!selectedOperation) {
             setRes(Math.log(parseFloat(num1)));
         }
     }
 
 
-    const toggleSign = (s: string)=>{
+    const toggleSign = ()=>{
         if(!selectedOperation){
             setNum1(prevNum1=>(-prevNum1).toString())
         }else {
@@ -131,29 +131,29 @@ export default function Calculator(){
                     <CalcButton title={"2"} onPress={()=>addNum1("2")}/>
                     <CalcButton title={"3"} onPress={()=>addNum1("3")}/>
                     <CalcButton title={"4"} onPress={()=>addNum1("4")}/>
-                    <CalcButton title={"+"} onPress={()=>add("+")}/>
+                    <CalcButton title={"+"} onPress={()=>add()}/>
                 </View>
                 <View style={styles.row}>
                     <CalcButton title={"5"} onPress={()=>addNum1("5")}/>
                     <CalcButton title={"6"} onPress={()=>addNum1("6")}/>
                     <CalcButton title={"7"} onPress={()=>addNum1("7")}/>
                     <CalcButton title={"8"} onPress={()=>addNum1("8")}/>
-                    <CalcButton title={"-"} onPress={()=>subtract("-")}/>
+                    <CalcButton title={"-"} onPress={()=>subtract()}/>
                 </View>
                 <View style={styles.row}>
-                    <CalcButton title={"C"} onPress={()=>clear("C")}/>
+                    <CalcButton title={"C"} onPress={()=>clear()}/>
                     <CalcButton title={"9"} onPress={()=>addNum1("9")}/>
                     <CalcButton title={"0"} onPress={()=>addNum1("0")}/>
                     <CalcButton title={"."} onPress={()=>addNum1(".")}/>
-                    <CalcButton title={"/"} onPress={()=>divide("/")}/>
+                    <CalcButton title={"/"} onPress={()=>divide()}/>
 
                 </View>
                 <View style={styles.row}>
-                    <CalcButton title={"="} onPress={()=>equal("=")}/>
-                    <CalcButton title={"+/-"} onPress={()=>toggleSign("+/-")}/>
-                    <CalcButton title={"ln"} onPress={()=>log("ln")}/>
-                    <CalcButton title={"DEL"} onPress={()=>deleteInt("DEL")}/>
-                    <CalcButton title={"*"} onPress={()=>multiply("*")}/>
+                    <CalcButton title={"="} onPress={()=>equal()}/>
+                    <CalcButton title={"+/-"} onPress={()=>toggleSign()}/>
+                    <CalcButton title={"ln"} onPress={()=>log()}/>
+                    <CalcButton title={"DEL"} onPress={()=>deleteInt()}/>
+                    <CalcButton title={"*"} onPress={()=>multiply()}/>
 
                 </View>
             </View>

@@ -131,29 +131,29 @@ export default function Calculator(){
                     <CalcButton title={"2"} onPress={()=>addNum1("2")}/>
                     <CalcButton title={"3"} onPress={()=>addNum1("3")}/>
                     <CalcButton title={"4"} onPress={()=>addNum1("4")}/>
-                    <CalcButton title={"+"} onPress={()=>add()}/>
+                    <CalcButton title={"+"} onPress={add}/>
                 </View>
                 <View style={styles.row}>
                     <CalcButton title={"5"} onPress={()=>addNum1("5")}/>
                     <CalcButton title={"6"} onPress={()=>addNum1("6")}/>
                     <CalcButton title={"7"} onPress={()=>addNum1("7")}/>
                     <CalcButton title={"8"} onPress={()=>addNum1("8")}/>
-                    <CalcButton title={"-"} onPress={()=>subtract()}/>
+                    <CalcButton title={"-"} onPress={subtract}/>
                 </View>
                 <View style={styles.row}>
-                    <CalcButton title={"C"} onPress={()=>clear()}/>
+                    <CalcButton title={"C"} onPress={clear}/>
                     <CalcButton title={"9"} onPress={()=>addNum1("9")}/>
                     <CalcButton title={"0"} onPress={()=>addNum1("0")}/>
                     <CalcButton title={"."} onPress={()=>addNum1(".")}/>
-                    <CalcButton title={"/"} onPress={()=>divide()}/>
+                    <CalcButton title={"/"} onPress={divide}/>
 
                 </View>
                 <View style={styles.row}>
-                    <CalcButton title={"="} onPress={()=>equal()}/>
-                    <CalcButton title={"+/-"} onPress={()=>toggleSign()}/>
-                    <CalcButton title={"ln"} onPress={()=>log()}/>
-                    <CalcButton title={"DEL"} onPress={()=>deleteInt()}/>
-                    <CalcButton title={"*"} onPress={()=>multiply()}/>
+                    <CalcButton title={"="} onPress={equal}/>
+                    <CalcButton title={"+/-"} onPress={toggleSign}/>
+                    <CalcButton title={"ln"} onPress={log}/>
+                    <CalcButton title={"DEL"} onPress={deleteInt}/>
+                    <CalcButton title={"*"} onPress={multiply}/>
 
                 </View>
             </View>
